@@ -57,7 +57,7 @@ var text = [
         "وقت",
         "منظم",
         "وصف",
-        "وصف"]];
+        "البريد الالكتروني"]];
 var lang = 0; //0 = Deutsch; 1 = Englisch; 2 = Arabisch
 var username = document.getElementById("username"); //eingegebener Name
 var password = document.getElementById("password"); //eingegebenes PW

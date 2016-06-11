@@ -114,8 +114,11 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+
   </head>
-  <body>
+  <body onload="listEvents()">
 
       <div class="container">
       </br>
@@ -144,7 +147,7 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
         <th>Datum</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="eventTable">
       <tr>
         <td>Fußball</td>
         <td>Saarbrücken, Kieselhumes</td>
@@ -164,5 +167,7 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
   </table>
     </div>
 </div>
+      <script language="javascript" type="text/javascript" src="InteKidz.js"></script>
+      
 </body>
 </html>

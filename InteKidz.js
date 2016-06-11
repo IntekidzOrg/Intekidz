@@ -74,17 +74,17 @@ firebase.initializeApp(config);
 
 function changeLang(pLang) { //Sprache wechseln
     lang = pLang;
-    document.getElementById("login").value = text[lang][2];
+    /*document.getElementById("login").value = text[lang][2];
     document.getElementById("usr").innerText = text[lang][3];
     document.getElementById("pwd").innerText = text[lang][4];
     document.getElementById("registrieren").value = text[lang][5];
     document.getElementById("register").value = text[lang][5];
     document.getElementById("option").getElementsByTagName(text[lang][6]);
-    document.getElementById("changeLang").innerHTML = text[lang][7];
+    */document.getElementById("changeLang").innerHTML = text[lang][7];
     document.getElementById("addEvent").innerHTML = text[lang][8];
     document.getElementById("profile").innerHTML = text[lang][9];
     document.getElementById("logout").innerHTML = text[lang][10];
-    document.getElementById("success").value = text[lang][11];
+    /*document.getElementById("success").value = text[lang][11];
     document.getElementById("event").innerText = text[lang][12];
     document.getElementById("ort").innerText = text[lang][13];
     document.getElementById("time").innerText = text[lang][14];
@@ -92,6 +92,7 @@ function changeLang(pLang) { //Sprache wechseln
     document.getElementById("description").innerText = text[lang][16];
     document.getElementById("mail").innerText = text[lang][17];
     document.getElementById("passwort").innerText = text[lang][4];
+    */
 }
 var i;
 
@@ -159,4 +160,37 @@ function newEvent() {
     firebase.database().ref('events/' + newEventy).set(event);
   
 }
+
+
+function listEvents() {
+  /*  firebase.database().ref('events').on('value', function (snapshot) {
+        console.log("test");
+        updateEvents(postElement, snapshot.val());
+    }); */
+    firebase.database().ref('events').once('value').then( function (snapshot) {
+        console.log("test");
+        updateEvents(snapshot.val());
+    });
+}
+
+function updateEvents(value) {
+    console.log(value);
+    Object.keys(value).forEach(function (key) {
+        console.log(value[key]);
+        var tr = document.createElement("tr");
+        var tdName = document.createElement("td");
+        tdName.appendChild(document.createTextNode(value[key].name));
+        var tdOrt = document.createElement("td");
+        tdOrt.appendChild(document.createTextNode(value[key].ort));
+        var tdZeit = document.createElement("td");
+        tdZeit.appendChild(document.createTextNode(value[key].zeit));
+        tr.appendChild(tdName);
+        tr.appendChild(tdOrt);
+        tr.appendChild(tdZeit);
+        document.getElementById("eventTable").appendChild(tr);
+    })
+}
+
+
+
 

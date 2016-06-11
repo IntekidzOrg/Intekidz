@@ -45,24 +45,26 @@ function intekidzlogin() {
         alert("error");
         console.log(error.message);
       });
+
+   /* for (i = 0; i < datenbank[0].length; i++) { //gehe gesp. Namen durch
+        if (datenbank[0][i] == username) { //einge. Name ist in Dateb
+            if (datenbank[1][i] == password) { //to do: enkrypte
+                userId = datenbank[0][i];
+                break;
+            } else {
+
+                break;
+            }
+        } else {
+            document.location.href = "index.html";
+            break;
+        }
+    } */
 }
-
-function intekidzregister() {
-
-    firebase.auth().createUserWithEmailAndPassword(username.value, password.value)
-    .then(
-      function (result) {
-    	alert("success");
-        document.location.href = "login.html";
-      },
-      function(error){
-        alert("error");
-        console.log(error.message);
-      });
-}
-
 
 function intekidzlogout() {
-    document.location.href = "login.html";
+    if (userId != "null") {
+        userId = "null";
+        alert(text[lang][1])
+    }
 }
-

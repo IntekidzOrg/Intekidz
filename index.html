@@ -1,82 +1,73 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script language="javascript" type="text/javascript" src="InteKidz.js"></script>
-</head>
-
-<body>
-
-    <div class="container">
-        <h1>Login</h1>
-        <hr>
-        <div class="form-group">
-            <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="username">
-        </div>
-        <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="password">
-        </div>
-
-        <button type="button" class="btn btn-primary" id="login" onClick="intekidzlogin()">Login</button>
+  <head>
+      <title>Startseite.html</title>
+      <style type="text/css">
+      #Event {
+        max-height: 100px;
+        min-height: 100px;
+      }
+      #username {
+        float:left;
+      }
+      #wrap {
+        width:600px;
+        margin:0 auto;
+      }
+      #left_col {
+        float:left;
+        width:300px;
+      }
+      #right_col {
+        float:right;
+        width:300px;
+      }
+      </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  </head>
+  <body>
+      <div class="container">
+      <div class="page-header">
+      <h1 id="myHeader">Intekidz</h1>
+    </div>
     </div>
 
+    <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="Startseite">Home</a></li>
+      <!-- Links im Menu und Home funktionieren nicht-->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Weitere Optionen <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li id = hamburger-menu><a href="event-erstellen.html">Event erstellen</a></li>
+          <li id = hamburger-menu><a href="sprache-ändern.html">Sprache ändern</a></li>
+          <li id = hamburger-menu><a href="profil.html">Profil</a></li>
+          <li id = hamburger-menu><a href="ausloggen.html">Ausloggen</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="wrap">
+    <div id="left_col">
+      <div class="container">
+        <img id= Event src="nicht-nur-in-der-bundesliga-rollt-der-ball-.jpg" class="img-rounded" class= "img-responsive" alt="nicht-nur-in-der-bundesliga-rollt-der-ball-">
+        <img id= Event src="nicht-nur-in-der-bundesliga-rollt-der-ball-.jpg" class="img-rounded" class= "img-responsive" alt="nicht-nur-in-der-bundesliga-rollt-der-ball-">
+      </div>
 
-    <script>
-        //Variablen
-        var datenbank = [["Peter", "Jon", "Claudia"], ["1234", "JonJon", "qwertz"]]; //namen, passwörter
-        var text = [["Falsches Passwort oder Benutzername",
-                     "Ausgeloggt"],
-                    ["Wrong username or password",
-                     "Logged out"],
-                    ["اسم المستخدم أو كلمة المرور غير صحيحة",
-                     "تسجيل الدخول"]];
-        var lang = 0; //0 = Deutsch; 1 = Englisch; 2 = Arabisch
-        var username = document.getElementById("username"); //eingegebener Name
-        var password = document.getElementById("password"); //eingegebenes PW
-        var userId = "null"; //eingeloggter Benutzer
-        //Funktionen
-        function changeLang(pLang) {//Sprache wechseln
-            "use strict";
-            lang = pLang;
-        }
-        var i;
-        function intekidzlogin(pUsername, pPassword) {
+    </div>
+    <div id="right_col">
+        <p id = username> Username </p> <!-- Variable einfügen! -->
+        <img id= profilbild src= "profilbild.jpg" class ="img-circle" class= "img-responsive" alt = "profilbild">
+        <img id= Event src="nicht-nur-in-der-bundesliga-rollt-der-ball-.jpg" class="img-rounded" class= "img-responsive" alt="nicht-nur-in-der-bundesliga-rollt-der-ball-">
+        <!--Events als Bilder, source?-->
+    </div>
+</div>
+      <script language="javascript" type="text/javascript" src="Intekidz.js"></script>
 
-            username = document.getElementById("username").innerHTML = pUsername;
-            password = document.getElementById("password").innerHTML = pPassword;
-           
-            for (i = 0; i < datenbank[0].length; i++) { //gehe gesp. Namen durch
-                if (datenbank[0][i] === username) { //einge. Name ist in Dateb
-                    if (datenbank[1][i] === password) { //to do: enkrypte
-                        userId = datenbank[0][i];
-                        break;
-                    } else {
-                        
-                        break;
-                    }
-                } else {
-                    document.location.href = "index.html";
-                    break;
-                }
-            }
-        }
-
-        function intekidzlogout() {
-            if (userId !== "null") {
-                userId = "null";
-                alert(text[lang][1])
-            }
-        }
-
-
-
-    </script>
-</body>
+  </body>
 </html>

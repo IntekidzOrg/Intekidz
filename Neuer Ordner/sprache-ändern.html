@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Sprachen einstellen</title>
+      <style type="text/css">
+      #button {
+        color: #D8CEF6;
+      }
+      /* #grad1 {
+        position: fixed;
+    top: 0;
+    left: 0;
+
+
+    min-width: 100%;
+    min-height: 100%;
+    background: #2EFEF7;
+    background: -webkit-linear-gradient(#2EFEF7, #A9F5F2);
+    background: -o-linear-gradient(#2EFEF7, #A9F5F2);
+    background: -moz-linear-gradient(r#2EFEF7, #A9F5F2);
+    background: linear-gradient(#2EFEF7, #A9F5F2);
+
+    #Header {
+      color: #8258FA;
+    }
+    */
+      </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+      <div id = grad1>
+    <div class="container">
+      <div class="page-header">
+      <h1 id="Header">Intekidz</h1>
+      </div>
+    </div>
+    <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="index.html">Home</a></li>
+      <!-- Links im Menu und Home funktionieren nicht-->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Weitere Optionen <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li id = hamburger-menu><a href="event-erstellen.html">Event erstellen</a></li>
+          <li id = hamburger-menu><a href="sprache-ändern.html">Sprache ändern</a></li>
+          <li id = hamburger-menu><a href="profil.html">Profil</a></li>
+          <li id = hamburger-menu><a href="ausloggen.html">Ausloggen</a></li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+    <div class="container">
+      <div class="btn-group-vertical">
+        <button id="deutsch" type="button" class="btn btn-primary" onClick="changeLang()">Deutsch</button>
+        <button id="englisch" type="button" class="btn btn-primary">English</button>
+        <button id="arabisch" type="button" class="btn btn-primary">العربية</button>
+      </div>
+  </div>
+</div>
+</body>
+</html>

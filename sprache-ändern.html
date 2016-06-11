@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
       <title>Sprachen einstellen</title>
@@ -45,21 +45,21 @@
       <li class="active"><a href="index.html">Home</a></li>
       <!-- Links im Menu und Home funktionieren nicht-->
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Weitere Optionen <span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="optionen">Weitere Optionen <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li id = hamburger-menu><a href="event-erstellen.html">Event erstellen</a></li>
-          <li id = hamburger-menu><a href="sprache-ändern.html">Sprache ändern</a></li>
-          <li id = hamburger-menu><a href="profil.html">Profil</a></li>
-          <li id = hamburger-menu><a href="ausloggen.html">Ausloggen</a></li>
+          <li id = hamburger-menu><a href="event-erstellen.html" id="addEvent">Event erstellen</a></li>
+          <li id = hamburger-menu><a href="sprache-ändern.html" id="changeLang">Sprache ändern</a></li>
+          <li id = hamburger-menu><a href="profil.html" id="profil">Profil</a></li>
+          <li id = hamburger-menu><a href="ausloggen.html" id="logout">Ausloggen</a></li>
         </ul>
       </li>
     </ul>
     </div>
     <div class="container">
       <div class="btn-group-vertical">
-        <button id="deutsch" type="button" class="btn btn-primary" onClick="changeLang()">Deutsch</button>
-        <button id="englisch" type="button" class="btn btn-primary">English</button>
-        <button id="arabisch" type="button" class="btn btn-primary">العربية</button>
+        <button id="deutsch" type="button" class="btn btn-primary" onClick="changeLang(0)">Deutsch</button>
+        <button id="englisch" type="button" class="btn btn-primary" onClick="changeLang(1)">English</button>
+        <button id="arabisch" type="button" class="btn btn-primary" onClick="changeLang(2)">العربية</button>
       </div>
   </div>
 </div>

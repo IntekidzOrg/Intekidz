@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -37,27 +37,27 @@
             <h1>Event erstellen</h1>
             <hr />
             <div class="form-group">
-                <label for="name">Name des Events</label>
+                <label for="name" id="event">Name des Events</label>
                 <input type="text" class="form-control" id="nameEvent">
             </div>
 
             <div class="form-group">
-                <label for="ort">Ort</label>
+                <label for="ort" id="ort">Ort</label>
                 <input type="text" class="form-control" id="ortEvent">
             </div>
 
             <div class="form-group">
-                <label for="zeit">Zeit</label>
+                <label for="zeit" id="time">Zeit</label>
                 <input type="text" class="form-control" id="zeitEvent">
             </div>
 
             <div class="form-group">
-                <label for="veranstalter">Veranstalter</label>
+                <label for="veranstalter" id="veranstalter">Veranstalter</label>
                 <input type="text" class="form-control" id="veranstalterEvent">
             </div>
 
             <div class="form-group">
-                <label for="beschreibung">Beschreibung</label>
+                <label for="beschreibung" id="description">Beschreibung</label>
                 <textarea class="form-control" rows="5" id="beschreiebung"></textarea>
             </div>
             <button type="button" class="btn btn-success" id="success" onClick="eventErstellen()">erstellen</button>

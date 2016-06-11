@@ -3,7 +3,89 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Events erstellen</title>
+    <style type="text/css">
+    body{
+       min-height: 100%;
+    }
+    body{
+       margin: 0;
+       padding: 0;
+       overflow-x: hidden;
+    }
+    #container {
+       display: flex;
+       min-height: 100%;
+    }
+    input[type=checkbox] {
+       position: absolute;
+       opacity: 0;
+    }
+    label {
+       position: absolute;
+       top: 10px;
+       left: 40px;
+       z-index: 1;
+       display: block;
+       font-size:3em;
+       color: #A4A4A4;
+       cursor: pointer;
+       transform: translate3d(0, 0, 0);
+       transition: transform .4s;
+    }
+    input[type=checkbox]:checked ~ label {
+       transform: translate3d(250px, 0, 0) rotate(90deg);
+    }
+    .content {
+       width:100%;
+       padding: 10px;
+       background-color: #f2f2f2;
+       transform: translate3d(0, 0, 0);
+       transition: transform .4s;
+    }
+    input[type=checkbox]:checked ~ .content {
+       transform: translate3d(250px, 0, 0);
+    }
+    input[type=checkbox]:checked ~ .slide-menu {
+       transform: translate3d(0, 0, 0);
+    }
+    input[type=checkbox]:checked ~ .slide-menu .menu li {
+       width: 100%;
+    }
+    .slide-menu {
+       transform: translate3d(-250px, 0, 0);
+       background-color: #F7F56A;
+       position: absolute;
+       width: 250px;
+       left: 0;
+       min-height: 100%;
+       transition: all .4s;
+    }
+    .slide-menu h1 {
+       margin: 10px;
+       text-shadow: 1px 1px 1px #000;
+    }
+    .menu {
+       list-style: none;
+       padding: 0;
+       margin: 0;
+    }
+    .menu a {
+       display: block;
+       text-decoration: none;
+       color: #424242;
+       font-size: 1.1em;
+       padding: 15px;
+       background-color: #e6e6e6;
+       border-bottom: 1px solid #1e222b;
+       box-shadow: inset 0px 1px 1px #8b9db3;
+    }
+    .menu a:hover {
+       background: #B4DCF0;
+       box-shadow: inset 0px 1px 1px #475059;
+    }
+
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -14,25 +96,24 @@
 <body>
     <div id=grad1>
         <div class="container">
+        </br>
             <div class="page-header">
                 <h1 id="Header">Intekidz</h1>
             </div>
         </div>
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="index.html">Home</a></li>
-                <!-- Links im Menu und Home funktionieren nicht-->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Weitere Optionen <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li id=hamburger-menu><a href="event-erstellen.html">Event erstellen</a></li>
-                        <li id=hamburger-menu><a href="sprache-ändern.html">Sprache ändern</a></li>
-                        <li id=hamburger-menu><a href="profil.html">Profil</a></li>
-                        <li id=hamburger-menu><a href="ausloggen.html">Ausloggen</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <div id="container">
+      <input id="toggle" type="checkbox"><label for="toggle">&equiv;</label>
+      <div class="content">
+      </div>
+      <div class="slide-menu">
+        <nav class="menu">
+          <li><a href="#" id="changeLang">Sprache ändern</a></li>
+          <li><a href="#" id="addEvent">Event erstellen</a></li>
+          <li><a href="#" id="profile">Profil</a></li>
+          <li><a href="#" id="logout">ausloggen</a></li>
+        </nav>
         </div>
+      </div>
         <div class="container">
             <h1>Event erstellen</h1>
             <hr />
@@ -59,6 +140,7 @@
             <div class="form-group">
                 <label for="beschreibung" id="descriptionLabel">Beschreibung</label>
                 <textarea class="form-control" rows="5" id="beschreibung"></textarea>
+
             </div>
             <button type="button" class="btn btn-success" id="success" onClick="newEvent()">erstellen</button>
         </div>

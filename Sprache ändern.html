@@ -56,7 +56,7 @@
       }
       .slide-menu {
          transform: translate3d(-250px, 0, 0);
-         background-color: #848484;
+         background-color: #6DB3D8;
          position: absolute;
          width: 250px;
          left: 0;
@@ -84,7 +84,7 @@
          box-shadow: inset 0px 1px 1px #8b9db3;
       }
       .menu a:hover {
-         background: #5c5c5c;
+         background: #6DB3D8;
          box-shadow: inset 0px 1px 1px #475059;
       }
       </style>
@@ -107,17 +107,18 @@
   </div>
   <div class="slide-menu">
   <nav class="menu">
-    <li><a href="Sprache ändern.html">Sprache ändern</a></li>
-    <li><a href="event-erstellen">Event erstellen</a></li>
-    <li><a href="#">Profil</a></li>
-    <li><a href="login.html">ausloggen</a></li>
+    <li><a href="Sprache ändern.html" id="changeLang">Sprache ändern</a></li>
+    <li><a href="event-erstellen" id="addEvent">Event erstellen</a></li>
+    <li><a href="#" id="profile">Profil</a></li>
+    <li><a href="login.html" id="logout">ausloggen</a></li>
   </nav>
   </div>
       <div class="btn-group-vertical">
-        <button id="button" type="button" class="btn btn-primary">Deutsch</button>
-        <button id="button" type="button" class="btn btn-primary">English</button>
-        <button id="button" type="button" class="btn btn-primary">العربية</button>
+        <button id="button" type="button" class="btn btn-primary" onClick="changeLang(0)">Deutsch</button>
+        <button id="button" type="button" class="btn btn-primary" onClick="changeLang(1)">English</button>
+        <button id="button" type="button" class="btn btn-primary" onClick="changeLang(2)">العربية</button>
       </div>
   </div>
+    <script language="javascript" type="text/javascript" src="InteKidz.js"></script>
 </body>
 </html>

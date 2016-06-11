@@ -188,8 +188,19 @@ function updateEvents(value) {
         tr.appendChild(tdOrt);
         tr.appendChild(tdZeit);
         document.getElementById("eventTable").appendChild(tr);
-    })
+        tdName.setAttribute("data-toggle", "modal");
+        tdName.addEventListener("click", function () { fillModalWithEvent(value[key]) }, false);
+        tdName.setAttribute("data-target", "#exampleModal");
+    });
 }
+
+    function fillModalWithEvent(event){
+        document.getElementById("myModalLabel").innerHTML = event.name;
+        console.log("click");
+        document.getElementById("myModal").modal("show");
+
+
+    }
 
 
 

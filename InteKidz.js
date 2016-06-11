@@ -5,15 +5,59 @@ var datenbank = [
 ]; //namen, passwörter
 var text = [
     ["Falsches Passwort oder Benutzername",
-        "Ausgeloggt"
-    ],
+        "Ausgeloggt",
+        "Anmelden",
+        "Benutzername",
+        "Passwort",
+        "Registrieren",
+        "Weitere Optionen",
+        "Sprache ändern",
+        "Event erstellen",
+        "Profil",
+        "Abmelden",
+        "Erstellen",
+        "Name des Events",
+        "Ort",
+        "Zeit",
+        "Veranstalter",
+        "Beschreibung",
+        "E-Mail"],
     ["Wrong username or password",
-        "Logged out"
-    ],
+        "Logged out",
+        "Log in",
+        "Username",
+        "Password",
+        "register",
+        "More options",
+        "Change Language",
+        "Add event",
+        "Profile",
+        "Log out",
+        "Add",
+        "Name of the Event",
+        "Location",
+        "Time",
+        "organizer",
+        "Description",
+        "E-Mail"],
     ["اسم المستخدم أو كلمة المرور غير صحيحة",
-        "تسجيل الدخول"
-    ]
-];
+        "تسجيل الدخول",
+        "تسجيل",
+        "اسم المستخدم",
+        "كلمة المرور",
+        "تسجيل",
+        "المزيد من الخيارات",
+        "تغيير اللغة",
+        "إنشاء الحدث",
+        "البيانات الشخصية",
+        "تسجيل الخروج",
+        "وضع",
+        "اسم الحدث",
+        "مكان",
+        "وقت",
+        "منظم",
+        "وصف",
+        "وصف"]];
 var lang = 0; //0 = Deutsch; 1 = Englisch; 2 = Arabisch
 var username = document.getElementById("username"); //eingegebener Name
 var password = document.getElementById("password"); //eingegebenes PW
@@ -31,6 +75,25 @@ firebase.initializeApp(config);
 function changeLang(pLang) { //Sprache wechseln
     "use strict";
     lang = pLang;
+    document.getElementById("login").value = text[lang][2];
+    document.getElementById("usr").innerText = text[lang][3];
+    document.getElementById("pwd").innerText = text[lang][4];
+    document.getElementById("registrieren").value = text[lang][5];
+    document.getElementById("register").value = text[lang][5];
+    document.getElementById("option").getElementsByTagName(text[lang][6]);
+    document.getElementById("changeLang").innerHTML = text[lang][7];
+    document.getElementById("addEvent").innerHTML = text[lang][8];
+    document.getElementById("profile").innerHTML = text[lang][9];
+    document.getElementById("logout").innerHTML = text[lang][10];
+    document.getElementById("success").value = text[lang][11];
+    document.getElementById("event").innerText = text[lang][12];
+    document.getElementById("ort").innerText = text[lang][13];
+    document.getElementById("time").innerText = text[lang][14];
+    document.getElementById("veranstalter").innerText = text[lang][15];
+    document.getElementById("description").innerText = text[lang][16];
+    document.getElementById("mail").innerText = text[lang][17];
+    document.getElementById("passwort").innerText = text[lang][4];
+    
 }
 var i;
 

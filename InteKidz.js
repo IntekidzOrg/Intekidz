@@ -28,10 +28,9 @@ function intekidzlogin(){
 							alert(text[lang][0]);
 							break;
 						}
+			} else {
+				alert(text[lang][1]);
 			}
-		}
-	if(userId === "null"){
-			alert(text[lang][1]);
 		}
 	}
 function intekidzlogout(){

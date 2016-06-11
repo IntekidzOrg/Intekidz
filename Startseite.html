@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>Startseite.html</title>
+      <title>Startseite</title>
       <style type="text/css">
+      #Header {
+        color: #8258FA;
+      }
       #Event {
         max-height: 100px;
         min-height: 100px;
@@ -22,6 +25,20 @@
         float:right;
         width:300px;
       }
+      #grad1 {
+        position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+    background: #2EFEF7; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#2EFEF7, #A9F5F2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#2EFEF7, #A9F5F2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(r#2EFEF7, #A9F5F2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#2EFEF7, #A9F5F2); /* Standard syntax (must be last) */
+    }
       </style>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,9 +47,10 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </head>
   <body>
+      <div id= grad1>
       <div class="container">
       <div class="page-header">
-      <h1 id="myHeader">Intekidz</h1>
+      <h1 id="Header">Intekidz</h1>
     </div>
     </div>
 
@@ -66,5 +84,6 @@
         <!--Events als Bilder, source?-->
     </div>
 </div>
-  </body>
+</div>
+</body>
 </html>

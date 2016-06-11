@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -118,31 +118,32 @@
             <h1>Event erstellen</h1>
             <hr />
             <div class="form-group">
-                <labe for="name" id="event">Name des Events</labe>
-                <input type="text" class="form-control" id="nameEvent">
+                <label for="name" id="eventLabel">Name des Events</label>
+                <input type="text" class="form-control" id="name">
             </div>
 
             <div class="form-group">
-                <labe for="ort" id="ort">Ort</labe>
-                <input type="text" class="form-control" id="ortEvent">
+                <label for="ort" id="ortLabel">Ort</label>
+                <input type="text" class="form-control" id="ort">
             </div>
 
             <div class="form-group">
-                <labe for="zeit" id="time">Zeit</labe>
-                <input type="text" class="form-control" id="zeitEvent">
+                <label for="zeit" id="timeLabel">Zeit</label>
+                <input type="text" class="form-control" id="zeit">
             </div>
 
             <div class="form-group">
-                <labe for="veranstalter" id="veranstalter">Veranstalter</labe>
-                <input type="text" class="form-control" id="veranstalterEvent">
+                <label for="veranstalter" id="veranstalterLabel">Veranstalter</label>
+                <input type="text" class="form-control" id="veranstalter">
             </div>
 
             <div class="form-group">
-                <labe for="beschreibung" id="description">Beschreibung</labe>
-                <textarea class="form-control" rows="5" id="beschreiebung"></textarea>
+                <label for="beschreibung" id="descriptionLabel">Beschreibung</label>
+                <textarea class="form-control" rows="5" id="beschreibung"></textarea>
+
             </div>
-            <button type="button" class="btn btn-success" id="success" onClick="eventErstellen()">erstellen</button>
+            <button type="button" class="btn btn-success" id="success" onClick="newEvent()">erstellen</button>
         </div>
-        <script language="javascript" type="text/javascript" src="Intekidz.js"></script>
+        <script language="javascript" type="text/javascript" src="InteKidz.js"></script>
 </body>
 </html>

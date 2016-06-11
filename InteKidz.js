@@ -123,8 +123,40 @@ function intekidzregister() {
       });
 }
 
-
 function intekidzlogout() {
     document.location.href = "login.html";
+}
+
+
+
+function Event(name, ort, zeit, veranstalter, beschreibung) {
+    if (nameEvent !== null && ort !== null && zeit !== null && veranstalter !== null && beschreibung !== null) {
+        this.name = name;
+        this.ort = ort;
+        this.zeit = zeit;
+        this.veranstalter = veranstalter;
+        this.beschreibung = beschreibung;
+        alert("Event wurde erstellt");
+    }
+    else {
+        alert("Ungueltige Eingabe");
+    }
+}
+
+function newEvent() {
+    
+    var event = {
+        name:  document.getElementById("name").value,
+        ort:  document.getElementById("ort").value,
+        zeit:  document.getElementById("zeit").value,
+        veranstalter: document.getElementById("veranstalter").value,
+        beschreibung : document.getElementById("beschreibung").value
+    };
+    console.log(event);
+
+    var newEventy = firebase.database().ref().child('events').push().key;
+
+    firebase.database().ref('events/' + newEventy).set(event);
+  
 }
 

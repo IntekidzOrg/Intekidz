@@ -48,8 +48,9 @@ function intekidzlogin() {
 }
 
 function intekidzregister() {
-
-    firebase.auth().createUserWithEmailAndPassword(username.value, password.value)
+	var usernameReg = document.getElementById("usrRegister");
+	var passwordReg = document.getElementById("pswRegister");
+    firebase.auth().createUserWithEmailAndPassword(usernameReg.value, passwordReg.value)
     .then(
       function (result) {
     	alert("success");

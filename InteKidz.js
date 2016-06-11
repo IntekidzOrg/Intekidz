@@ -161,6 +161,25 @@ function newEvent() {
   
 }
 
+function newProfil() {
+    
+    var profil = {
+        name:  document.getElementById("personName").value,
+        alter : document.getElementById("personAlter").value,
+        ort:  document.getElementById("personOrt").value,
+        herkunftsland:  document.getElementById("personHerkunftsland").value,
+        sprachen: document.getElementById("personSprachen").value,
+        hobbies : document.getElementById("personHobbies").value,
+        status : document.getElementById("person´Status").value
+    };
+    console.log(profil);
+
+    var newProfily = firebase.database().ref().child('profils').push().key;
+
+    firebase.database().ref('profils/' + newProfily).set(profil);
+  
+}
+
 
 function listEvents() {
   /*  firebase.database().ref('events').on('value', function (snapshot) {

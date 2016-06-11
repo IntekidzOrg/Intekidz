@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Bootstrap Example</title>
@@ -48,9 +48,9 @@
             var lLoggedIn = false;
             for (i = 0; i < datenbank[0].length; i++) //gehe gesp. Namen durch
             {
-                if (datenbank[0][i] === username) //einge. Name ist in Dateb
+                if (datenbank[0][i] == username) //einge. Name ist in Dateb
                 {
-                    if (datenbank[1][i] === password) //to do: enkrypten
+                    if (datenbank[1][i] == password) //to do: enkrypten
                     {
                         userId = datenbank[0][i];
                         lLoggedIn = true;

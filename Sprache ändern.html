@@ -36,7 +36,7 @@
          transition: transform .4s;
       }
       input[type=checkbox]:checked ~ label {
-         transform: translate3d(250px, 0, 0) rotate(90deg);
+         transform: translate3d(15px, 0, 0) rotate(90deg);
       }
       .content {
          width:100%;
@@ -46,7 +46,7 @@
          transition: transform .4s;
       }
       input[type=checkbox]:checked ~ .content {
-         transform: translate3d(15px, 0, 0);
+         transform: translate3d(250px, 0, 0);
       }
       input[type=checkbox]:checked ~ .slide-menu {
          transform: translate3d(0, 0, 0);
@@ -56,7 +56,7 @@
       }
       .slide-menu {
          transform: translate3d(-250px, 0, 0);
-         background-color: #848484;
+         background-color: #acc37d;
          position: absolute;
          width: 250px;
          left: 0;
@@ -84,7 +84,7 @@
          box-shadow: inset 0px 1px 1px #8b9db3;
       }
       .menu a:hover {
-         background: #5c5c5c;
+         background: #7f81ff;
          box-shadow: inset 0px 1px 1px #475059;
       }
       </style>
@@ -103,8 +103,8 @@
   </div>
   <div class="slide-menu">
   <nav class="menu">
-      <li><a href="Sprache ändern.html" id="changeLang">Sprache ändern</a></li>
-      <li><a href="event-erstellen" id="addEvent">Event erstellen</a></li>
+      <li><a href="index.html" id="home">Home</a></li>
+      <li><a href="event-erstellen.html" id="addEvent">Event erstellen</a></li>
       <li><a href="#" id="profile">Profil</a></li>
       <li><a href="login.html" id="logout">ausloggen</a></li>
   </nav>

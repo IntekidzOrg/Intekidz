@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script language="javascript" type="text/javascript" src="InteKidz.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Login</h1>
+        <hr>
+        <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" id="username">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="password">
+        </div>
+
+        <button type="button" class="btn btn-primary" id="login" onClick="intekidzlogin()">Login</button>
+    </div>
+
+
+    <script>
+        //Variablen
+        var datenbank = [["a", "b"], ["c", "d"]]; //namen, passwörter
+        var text = [['Deutsch1', 'Deustch2'], ['Englisch1', 'Englisch2'],
+                           ['Arabisch1', 'Arabisch2']];
+        var lang = 0; //0 = Deutsch; 1 = Englisch; 2 = Arabisch
+        var username = document.getElementById("username"); //eingegebener Name
+        var password = document.getElementById("password"); //eingegebenes PW
+        var userId = "null"; //eingeloggter Benutzer
+        //Funktionen
+        function changeLang(pLang) //Sprache wechseln
+        {
+            lang = parseInt(pLang);
+        }
+        var i;
+        
+        function intekidzlogin() {
+            var lLoggedIn = false;
+            for (i = 0; i < datenbank[0].length; i++) //gehe gesp. Namen durch
+            {
+                if (datenbank[0][i] === username) //einge. Name ist in Dateb
+                {
+                    if (datenbank[1][i] === password) //to do: enkrypten
+                    {
+                        userId = datenbank[0][i];
+                        lLoggedIn = true;
+                        break;
+                    } else {
+                        alert("Das Passwort oder der Benutzername" +
+                                "stimmen nicht überein.");
+                        break;
+                    }
+                }
+            }
+            if (lLoggedIn == false) {
+                alert("Der Benutzername wurde falsch eingegeben");
+            }
+        }
+    </script>
+</body>
+</html>

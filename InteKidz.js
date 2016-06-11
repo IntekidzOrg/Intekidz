@@ -73,7 +73,6 @@ var config = {
 firebase.initializeApp(config);
 
 function changeLang(pLang) { //Sprache wechseln
-    "use strict";
     lang = pLang;
     document.getElementById("login").value = text[lang][2];
     document.getElementById("usr").innerText = text[lang][3];
@@ -93,7 +92,6 @@ function changeLang(pLang) { //Sprache wechseln
     document.getElementById("description").innerText = text[lang][16];
     document.getElementById("mail").innerText = text[lang][17];
     document.getElementById("passwort").innerText = text[lang][4];
-    
 }
 var i;
 

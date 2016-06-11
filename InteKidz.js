@@ -52,26 +52,7 @@ function intekidzregister() {
     firebase.auth().createUserWithEmailAndPassword(username.value, password.value)
     .then(
       function (result) {
-    	  var ref = new Firebase("https://intekidz.firebaseio.com");
-    	  ref.createUser({
-    	    email: username.value,
-    	    password: password.value
-    	  }, function(error, userData) {
-    	    if (error) {
-    	      switch (error.code) {
-    	        case "EMAIL_TAKEN":
-    	          console.log("The new user account cannot be created because the email is already in use.");
-    	          break;
-    	        case "INVALID_EMAIL":
-    	          console.log("The specified email is not a valid email.");
-    	          break;
-    	        default:
-    	          console.log("Error creating user:", error);
-    	      }
-    	    } else {
-    	      console.log("Successfully created user account with uid:", userData.uid);
-    	    }
-    	  });
+    	alert("success");
         document.location.href = "login.html";
       },
       function(error){

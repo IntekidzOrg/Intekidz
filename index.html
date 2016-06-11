@@ -3,24 +3,12 @@
   <head>
       <title>Startseite</title>
       <style type="text/css">
-      #Event {
-        max-height: 100px;
-        min-height: 100px;
-      }
+
       #username {
-        float:left;
-      }
-      #wrap {
-        width:600px;
-        margin:0 auto;
-      }
-      #left_col {
-        float:left;
-        width:300px;
-      }
-      #right_col {
         float:right;
-        width:300px;
+      }
+      #profilbild{
+        float: right;
       }
 body{
    min-height: 100%;
@@ -127,9 +115,10 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
 
       <div class="container">
       </br>
-      <div class="page-header">
+    <!--  <div class="page-header">
       <h1 id="Header">Intekidz</h1>
-    </div>
+    </div>-->
+    <img id= Logo src= "logo.png" class= "img-responsive" alt = "Intekidz">
     <div id="container">
   <input id="toggle" type="checkbox"><label for="toggle">&equiv;</label>
   <div class="content">
@@ -143,24 +132,35 @@ input[type=checkbox]:checked ~ .slide-menu .menu li {
     </nav>
     </div>
   </div>
-
-
-
-  <div id="wrap">
-    <div id="left_col">
-      <div class="container">
-        <img id= Event src="nicht-nur-in-der-bundesliga-rollt-der-ball-.jpg" class="img-rounded" class= "img-responsive" alt="nicht-nur-in-der-bundesliga-rollt-der-ball-">
-        <img id= Event src="nicht-nur-in-der-bundesliga-rollt-der-ball-.jpg" class="img-rounded" class= "img-responsive" alt="nicht-nur-in-der-bundesliga-rollt-der-ball-">
-      </div>
-
-    </div>
-    <div id="right_col">
         <p id = username> Username </p> <!-- Variable einfügen! -->
         <img id= profilbild src= "profilbild.jpg" class ="img-circle" class= "img-responsive" alt = "profilbild">
-        <img id= Event src="nicht-nur-in-der-bundesliga-rollt-der-ball-.jpg" class="img-rounded" class= "img-responsive" alt="nicht-nur-in-der-bundesliga-rollt-der-ball-">
-        <!--Events als Bilder, source?-->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ort</th>
+        <th>Datum</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fußball</td>
+        <td>Saarbrücken, Kieselhumes</td>
+        <td>19.06.16, 14:00</td>
+      </tr>
+      <tr>
+        <td>Backen</td>
+        <td>Siegesstr.1, 50668 Köln</td>
+        <td>13.06.16, 16:30</td>
+      </tr>
+      <tr>
+        <td>Karten spielen</td>
+        <td>Spielplatz, Neunkirchen</td>
+        <td>17.06.16, 12:15</td>
+      </tr>
+    </tbody>
+  </table>
     </div>
-</div>
 </div>
 </body>
 </html>

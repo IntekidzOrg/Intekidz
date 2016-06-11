@@ -45,26 +45,43 @@ function intekidzlogin() {
         alert("error");
         console.log(error.message);
       });
-
-   /* for (i = 0; i < datenbank[0].length; i++) { //gehe gesp. Namen durch
-        if (datenbank[0][i] == username) { //einge. Name ist in Dateb
-            if (datenbank[1][i] == password) { //to do: enkrypte
-                userId = datenbank[0][i];
-                break;
-            } else {
-
-                break;
-            }
-        } else {
-            document.location.href = "index.html";
-            break;
-        }
-    } */
 }
+
+function intekidzregister() {
+
+    firebase.auth().createUserWithEmailAndPassword(username.value, password.value)
+    .then(
+      function (result) {
+    	  var ref = new Firebase("https://intekidz.firebaseio.com");
+    	  ref.createUser({
+    	    email: username.value,
+    	    password: password.value
+    	  }, function(error, userData) {
+    	    if (error) {
+    	      switch (error.code) {
+    	        case "EMAIL_TAKEN":
+    	          console.log("The new user account cannot be created because the email is already in use.");
+    	          break;
+    	        case "INVALID_EMAIL":
+    	          console.log("The specified email is not a valid email.");
+    	          break;
+    	        default:
+    	          console.log("Error creating user:", error);
+    	      }
+    	    } else {
+    	      console.log("Successfully created user account with uid:", userData.uid);
+    	    }
+    	  });
+        document.location.href = "login.html";
+      },
+      function(error){
+        alert("error");
+        console.log(error.message);
+      });
+}
+
 
 function intekidzlogout() {
-    if (userId != "null") {
-        userId = "null";
-        alert(text[lang][1])
-    }
+    document.location.href = "login.html";
 }
+

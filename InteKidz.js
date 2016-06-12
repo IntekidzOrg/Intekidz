@@ -70,11 +70,11 @@ var text = [
         "إنشاء أحداث",
         "تسجيل",
         "وضع اللغات"]];
-var lang = 0; //0 = Deutsch; 1 = Englisch; 2 = Arabisch
+var lang; //0 = Deutsch; 1 = Englisch; 2 = Arabisch
 var username = document.getElementById("username"); //eingegebener Name
 var password = document.getElementById("password"); //eingegebenes PW
 var userId = "null"; //eingeloggter Benutzer
-var language = 0;
+var language;
 //Funktionen
 // Initialize Firebase
 var config = {
@@ -87,11 +87,10 @@ firebase.initializeApp(config);
 
 function changeLang(pLang) { //Sprache wechseln
     lang = pLang;
-    document.getElementById("sprache").innerText = text[lang][20]
-    document.getElementById("changeLang").innerHTML = text[lang][7];
     document.getElementById("addEvent").innerHTML = text[lang][8];
     document.getElementById("profile").innerHTML = text[lang][9];
     document.getElementById("logout").innerHTML = text[lang][10];
+    document.getElementById("start").innerHTML = text[lang][18]
 }
 function updateLang(pSite)
 {
@@ -120,14 +119,14 @@ function updateLang(pSite)
 				document.getElementById("changeLang").innerHTML = text[lang][7];
 			    document.getElementById("profile").innerHTML = text[lang][9];
 			    document.getElementById("logout").innerHTML = text[lang][10];
-			    document.getElementById("eventTitle").innerText = text[lang][18];
-			    document.getElementById("start").innerText = text[lang][17];
+			    document.getElementById("eventTitle").innerText = text[lang][19];
+			    document.getElementById("start").innerText = text[lang][18];
 				break;
-		case 4: document.getElementById("changeLang").innerHTML = text[lang][7];
+		case 4: //document.getElementById("language").innerHTML = text[lang][7];
 	    		document.getElementById("addEvent").innerHTML = text[lang][8];
 	    		document.getElementById("profile").innerHTML = text[lang][9];
 	    		document.getElementById("logout").innerHTML = text[lang][10];
-	    		document.getElementById("start").innerText = text[lang][17];
+	    		document.getElementById("start").innerText = text[lang][18];
 	    		break;
 	}
 }

@@ -10,8 +10,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+   <style type="text/css">
+   #Logo {
+     margin-left: auto;
+     margin-right: auto;
+     z-index:5;
+   }
+   </style>
 </head>
 <body>
+    <img id= Logo src= "logo.png" class= "img-responsive" alt = "Intekidz">
     <div class="container">
         <h1>Registration</h1>
         <hr>
@@ -23,7 +31,12 @@
             <label for="pwd" id="passwort">Passwort:</label>
             <input type="password" class="form-control" id="pswRegister" />
         </div>
-     
+
+        <div class="form-group">
+            <label for="Nationalität" id="Nationalität">Nationalität:</label>
+            <input type="text" class="form-control" id="NationalitätRegister">
+        </div>
+
         <button type="button" class="btn btn-primary" id="registrieren" onClick="intekidzregister()">Registrieren</button>
     </div>
     <script language="javascript" type="text/javascript" src="InteKidz.js"></script>

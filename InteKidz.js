@@ -87,16 +87,16 @@ firebase.initializeApp(config);
 
 function changeLang(pLang) { //Sprache wechseln
     lang = pLang;
-    document.getElementById("addEvent").innerHTML = text[lang][8];
-    document.getElementById("profile").innerHTML = text[lang][9];
-    document.getElementById("logout").innerHTML = text[lang][10];
-    document.getElementById("start").innerHTML = text[lang][18]
-}
+    //var user = firebase.auth().currentUser;
+    //firebase.database().ref('languages/' + user.uid).set(lang);
+    this.updateLang(5);
+    }
 function updateLang(pSite)
 {
 	switch(pSite)
 	{
-		case 1: document.getElementById("login").innerText = text[lang][2];
+		case 1: alert("test");
+			    document.getElementById("login").innerText = text[1][2];
 				document.getElementById("usr").innerText = text[lang][3];
 				document.getElementById("pwd").innerText = text[lang][4];
 				document.getElementById("register").innerText = text[lang][5];
@@ -122,14 +122,20 @@ function updateLang(pSite)
 			    document.getElementById("eventTitle").innerText = text[lang][19];
 			    document.getElementById("start").innerText = text[lang][18];
 				break;
-		case 4: //document.getElementById("language").innerHTML = text[lang][7];
+		case 4: document.getElementById("language").innerHTML = text[lang][7];
 	    		document.getElementById("addEvent").innerHTML = text[lang][8];
 	    		document.getElementById("profile").innerHTML = text[lang][9];
 	    		document.getElementById("logout").innerHTML = text[lang][10];
 	    		document.getElementById("start").innerText = text[lang][18];
 	    		break;
+		case 5: document.getElementById("addEvent").innerHTML = text[lang][8];
+	    		document.getElementById("profile").innerHTML = text[lang][9];	
+	    		document.getElementById("logout").innerHTML = text[lang][10];	
+	    		document.getElementById("start").innerHTML = text[lang][18];
+	    		break;
 	}
 }
+
 var i;
 
 
@@ -269,4 +275,3 @@ function loadIndex()
 	this.listEvents;
 	this.updateLang(4);
 }
-

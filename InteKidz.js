@@ -207,6 +207,7 @@ function newProfil() {
         herkunftsland:  document.getElementById("personHerkunftsland").value,
         sprachen: document.getElementById("personSprachen").value,
         hobbies : document.getElementById("personHobbies").value,
+        nummer : document.getElementById("personNummer").value,
         status : document.getElementById("personStatus").value
     };
     console.log(profil);

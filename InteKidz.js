@@ -14,14 +14,18 @@ var text = [
         "Sprache ändern",
         "Event erstellen",
         "Profil",
-        "Abmelden",
+        "Abmelden", //10
         "Erstellen",
         "Name des Events",
         "Ort",
         "Zeit",
         "Veranstalter",
         "Beschreibung",
-        "E-Mail"],
+        "E-Mail",
+        "Startseite",
+        "Events erstellen",
+        "Registrierung",
+        "Sprachen einstellen"],
     ["Wrong username or password",
         "Logged out",
         "Log in",
@@ -39,7 +43,11 @@ var text = [
         "Time",
         "organizer",
         "Description",
-        "E-Mail"],
+        "E-Mail",
+        "Home",
+        "Add events",
+        "Registration",
+        "Change language"],
     ["اسم المستخدم أو كلمة المرور غير صحيحة",
         "تسجيل الدخول",
         "تسجيل",
@@ -57,11 +65,16 @@ var text = [
         "وقت",
         "منظم",
         "وصف",
-        "البريد الالكتروني"]];
+        "البريد الالكتروني",
+        "منزل",
+        "إنشاء أحداث",
+        "تسجيل",
+        "وضع اللغات"]];
 var lang = 0; //0 = Deutsch; 1 = Englisch; 2 = Arabisch
 var username = document.getElementById("username"); //eingegebener Name
 var password = document.getElementById("password"); //eingegebenes PW
 var userId = "null"; //eingeloggter Benutzer
+var language = 0;
 //Funktionen
 // Initialize Firebase
 var config = {
@@ -74,27 +87,52 @@ firebase.initializeApp(config);
 
 function changeLang(pLang) { //Sprache wechseln
     lang = pLang;
-    /*document.getElementById("login").value = text[lang][2];
-    document.getElementById("usr").innerText = text[lang][3];
-    document.getElementById("pwd").innerText = text[lang][4];
-    document.getElementById("registrieren").value = text[lang][5];
-    document.getElementById("register").value = text[lang][5];
-    document.getElementById("option").getElementsByTagName(text[lang][6]);
-    */document.getElementById("changeLang").innerHTML = text[lang][7];
+    document.getElementById("sprache").innerText = text[lang][20]
+    document.getElementById("changeLang").innerHTML = text[lang][7];
     document.getElementById("addEvent").innerHTML = text[lang][8];
     document.getElementById("profile").innerHTML = text[lang][9];
     document.getElementById("logout").innerHTML = text[lang][10];
-    /*document.getElementById("success").value = text[lang][11];
-    document.getElementById("event").innerText = text[lang][12];
-    document.getElementById("ort").innerText = text[lang][13];
-    document.getElementById("time").innerText = text[lang][14];
-    document.getElementById("veranstalter").innerText = text[lang][15];
-    document.getElementById("description").innerText = text[lang][16];
-    document.getElementById("mail").innerText = text[lang][17];
-    document.getElementById("passwort").innerText = text[lang][4];
-    */
+}
+function updateLang(pSite)
+{
+	switch(pSite)
+	{
+		case 1: document.getElementById("login").innerText = text[lang][2];
+				document.getElementById("usr").innerText = text[lang][3];
+				document.getElementById("pwd").innerText = text[lang][4];
+				document.getElementById("register").innerText = text[lang][5];
+				break;
+		case 2: document.getElementById("registrierung").innerText = text[lang][19];
+				document.getElementById("registrieren").value = text[lang][5];
+				document.getElementById("mail").innerText = text[lang][17];
+				document.getElementById("passwort").innerText = text[lang][4];
+				document.getElementById("changeLang").innerHTML = text[lang][7];
+			    document.getElementById("addEvent").innerHTML = text[lang][8];
+			    document.getElementById("profile").innerHTML = text[lang][9];
+			    document.getElementById("logout").innerHTML = text[lang][10];
+				break;
+		case 3: document.getElementById("success").value = text[lang][11]
+				document.getElementById("eventLabel").innerText = text[lang][12];
+				document.getElementById("ortLabel").innerText = text[lang][13];
+				document.getElementById("timeLabel").innerText = text[lang][14];
+				document.getElementById("veranstalterLabel").innerText = text[lang][15];
+				document.getElementById("descriptionLabel").innerText = text[lang][16];
+				document.getElementById("changeLang").innerHTML = text[lang][7];
+			    document.getElementById("profile").innerHTML = text[lang][9];
+			    document.getElementById("logout").innerHTML = text[lang][10];
+			    document.getElementById("eventTitle").innerText = text[lang][18];
+			    document.getElementById("start").innerText = text[lang][17];
+				break;
+		case 4: document.getElementById("changeLang").innerHTML = text[lang][7];
+	    		document.getElementById("addEvent").innerHTML = text[lang][8];
+	    		document.getElementById("profile").innerHTML = text[lang][9];
+	    		document.getElementById("logout").innerHTML = text[lang][10];
+	    		document.getElementById("start").innerText = text[lang][17];
+	    		break;
+	}
 }
 var i;
+
 
 function intekidzlogin() {
 
@@ -161,6 +199,25 @@ function newEvent() {
   
 }
 
+function newProfil() {
+    
+    var profil = {
+        name:  document.getElementById("personName").value,
+        alter : document.getElementById("personAlter").value,
+        ort:  document.getElementById("personOrt").value,
+        herkunftsland:  document.getElementById("personHerkunftsland").value,
+        sprachen: document.getElementById("personSprachen").value,
+        hobbies : document.getElementById("personHobbies").value,
+        status : document.getElementById("person´Status").value
+    };
+    console.log(profil);
+
+    var newProfily = firebase.database().ref().child('profils').push().key;
+
+    firebase.database().ref('profils/' + newProfily).set(profil);
+  
+}
+
 
 function listEvents() {
   /*  firebase.database().ref('events').on('value', function (snapshot) {
@@ -194,6 +251,7 @@ function updateEvents(value) {
     });
 }
 
+
     function fillModalWithEvent(event){
         document.getElementById("myModalLabel").innerHTML = event.name;
         console.log("click");
@@ -204,4 +262,11 @@ function updateEvents(value) {
 
 
 
+
+
+function loadIndex()
+{
+	this.listEvents;
+	this.updateLang(4);
+}
 

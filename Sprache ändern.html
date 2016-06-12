@@ -2,15 +2,12 @@
 <html lang="en">
   <head>
       <title>Sprachen einstellen</title>
-      <style type="text/css">
-      #button {
-        color: #D8CEF6;
-        z-index: 5;
-      }
-      #Logo {
-        margin-left: auto;
-        margin-right: auto;
-      }
+        <style type="text/css">
+        #Logo {
+          margin-left: auto;
+          margin-right: auto;
+          z-index:5;
+        }
       body{
          min-height: 100%;
       }
@@ -109,16 +106,18 @@
   </div>
   <div class="slide-menu">
   <nav class="menu">
-      <li><a href="index.html" id="home">Home</a></li>
+      <li><a href="index.html" id="start">Home</a></li>
       <li><a href="event-erstellen.html" id="addEvent">Event erstellen</a></li>
-      <li><a href="#" id="profile">Profil</a></li>
+      <li><a href="profil.html" id="profile">Profil</a></li>
       <li><a href="login.html" id="logout">ausloggen</a></li>
   </nav>
   </div>
-      <div class="btn-group-vertical">
-        <button id="button" type="button" class="btn btn-primary">Deutsch</button>
-        <button id="button" type="button" class="btn btn-primary">English</button>
-        <button id="button" type="button" class="btn btn-primary">العربية</button>
-      </div>
+      <div class="container">
+        <div class="list-group">
+          <a href="#" class="list-group-item">Deutsch</a>
+          <a href="#" class="list-group-item">English</a>
+          <a href="#" class="list-group-item">العربية</a>
+  </div>
+</div>
 </body>
 </html>

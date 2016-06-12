@@ -88,12 +88,17 @@ firebase.initializeApp(config);
 function changeLang(pLang) { //Sprache wechseln
     lang = pLang;
     var user = firebase.auth().currentUser;
-    console.log(user);
+    //console.log(user);
     firebase.database().ref('languages/' + user.uid).set(lang);
     this.updateLang(5);
     }
 function updateLang(pSite)
 {
+    var user = firebase.auth().currentUser;
+    firebase.database().ref('languages/' + user.uid).once('value').then(function (snapshot) {
+        lang = snapshot.val();
+        //updateEvents(snapshot.val());
+    });
 	switch(pSite)
 	{
 		case 1: alert("test");
@@ -262,7 +267,7 @@ function updateEvents(value) {
     function fillModalWithEvent(event){
         document.getElementById("myModalLabel").innerHTML = event.name;
         console.log("click");
-        document.getElementById("myModal").modal("show");
+        //document.getElementById("myModal").modal("show");
 
 
     }

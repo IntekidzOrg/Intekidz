@@ -96,8 +96,7 @@ function updateLang(pSite)
 {
 	switch(pSite)
 	{
-		case 1: alert("test");
-			    document.getElementById("login").innerText = text[1][2];
+		case 1: document.getElementById("login").innerText = text[lang][2];
 				document.getElementById("usr").innerText = text[lang][3];
 				document.getElementById("pwd").innerText = text[lang][4];
 				document.getElementById("register").innerText = text[lang][5];
@@ -123,7 +122,7 @@ function updateLang(pSite)
 			    document.getElementById("eventTitle").innerText = text[lang][19];
 			    document.getElementById("start").innerText = text[lang][18];
 				break;
-		case 4: document.getElementById("language").innerHTML = text[lang][7];
+		case 4: //document.getElementById("language").innerHTML = text[lang][7];
 	    		document.getElementById("addEvent").innerHTML = text[lang][8];
 	    		document.getElementById("profile").innerHTML = text[lang][9];
 	    		document.getElementById("logout").innerHTML = text[lang][10];
@@ -208,12 +207,8 @@ function newProfil() {
         herkunftsland:  document.getElementById("personHerkunftsland").value,
         sprachen: document.getElementById("personSprachen").value,
         hobbies : document.getElementById("personHobbies").value,
-<<<<<<< Updated upstream
         nummer : document.getElementById("personNummer").value,
         status : document.getElementById("personStatus").value
-=======
-        status : document.getElementById("person´Status").value
->>>>>>> Stashed changes
     };
     console.log(profil);
 
@@ -250,11 +245,28 @@ function updateEvents(value) {
         tr.appendChild(tdOrt);
         tr.appendChild(tdZeit);
         document.getElementById("eventTable").appendChild(tr);
-    })
+        tdName.setAttribute("data-toggle", "modal");
+        tdName.addEventListener("click", function () { fillModalWithEvent(value[key]) }, false);
+        tdName.setAttribute("data-target", "#exampleModal");
+    });
 }
+
+
+    function fillModalWithEvent(event){
+        document.getElementById("myModalLabel").innerHTML = event.name;
+        console.log("click");
+        document.getElementById("myModal").modal("show");
+
+
+    }
+
+
+
+
 
 function loadIndex()
 {
 	this.listEvents;
 	this.updateLang(4);
 }
+

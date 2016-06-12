@@ -87,8 +87,9 @@ firebase.initializeApp(config);
 
 function changeLang(pLang) { //Sprache wechseln
     lang = pLang;
-    //var user = firebase.auth().currentUser;
-    //firebase.database().ref('languages/' + user.uid).set(lang);
+    var user = firebase.auth().currentUser;
+    console.log(user);
+    firebase.database().ref('languages/' + user.uid).set(lang);
     this.updateLang(5);
     }
 function updateLang(pSite)
